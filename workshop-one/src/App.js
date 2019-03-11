@@ -24,7 +24,7 @@ class App extends Component {
     stubTaskData.push(obj)
   }
 
-  handleLogin(event) {
+  handleAddTask(event) {
     const formData = new FormData(event.target)
     const user = {}
  
@@ -35,17 +35,16 @@ class App extends Component {
     }
     console.log(user)
     stubTaskData.push(user)
-    // Do what you will with the user object here
+    this.hideModal()
+
  }
 
- removeElementWithKey(key){
-   console.log("delete PLEASE", key)
-  stubTaskData = stubTaskData.filter(function(ele, index){
-    return index != key;
-});
-console.log(stubTaskData)
-this.forceUpdate()
- }
+  removeElementWithKey(key){
+    stubTaskData = stubTaskData.filter(function(ele, index){
+      return index != key;
+    });
+    this.forceUpdate()
+  }
 
 
   render() {
@@ -58,7 +57,7 @@ this.forceUpdate()
         {stubTaskData.map((object, i) => <Task key={i} title={object.title} description={object.description} handleDeleteCallback={() => {this.removeElementWithKey(i)}}/>)}
         <Modal show={this.state.show} handleClose={this.hideModal}>
         <h1 className="ModalSubheading">New Task</h1>
-          <form onSubmit={this.handleLogin}>
+          <form onSubmit={this.handleAddTask.bind(this)}>
             <p className="ModalSubheading">Add title</p>
             <input type="text" name="title"></input>
             <p className="ModalSubheading">description</p>

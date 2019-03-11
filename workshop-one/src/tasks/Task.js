@@ -27,7 +27,7 @@ class Task extends Component {
             <p className="Subheading">{this.props.description}</p>
             {this.state.completed && (
                 <p className="Subheading">This has been completed</p>
-            ) && (<button className={`TaskButton__Completed__true`} onClick={this.props.handleDeleteCallback}> 
+            ) && (<button className={`DeleteButton`} onClick={this.props.handleDeleteCallback}> 
             Delete </button>)}
             <button className={`TaskButton__Completed__${this.state.completed}`} onClick={(event) => { this.handleCompletion(); this.render();}}> 
             {this.setButtonText(this.state.completed)} </button>

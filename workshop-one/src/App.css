@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: #21252e;
+  height: 100vh;
 }
 
 .App-logo {
@@ -34,16 +36,31 @@
 
 .Task {
   display: center;
+  width: fit-content;
+  min-width:50vw;
   background-color: #282c34;
-  width: 60vh;
-  height: 5rem;
+  align-content: center;
+  margin-top:5px;
+  margin-bottom:5px;
+  margin-left:auto;margin-right:auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius:20px;
+}
+
+.TaskUncompleted {
+  background-color: #282c34 !important;
+}
+
+.TaskCompleted {
+    background-color: white !important;
 }
 
 .Heading {
   color: white;
 }
 
-.Subeading {
+.Subheading {
   color: white;
   text-decoration-color: white;
 }
@@ -53,4 +70,38 @@
   background-color: black;
   background-image: linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px);
   height: 60vh;
+}
+
+.Main {
+  /* background-color: #21252e; */
+}
+
+.TaskButton {
+  padding:5px;
+  border-radius:8px;
+
+  background-color: rgb(193, 41, 41);
+  border: none;
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.PlusButton {
+
+  background-color: #d44949;
+  height: 50px;
+  position: absolute;
+  outline: 0;
+  display: block;
+  color: #fff;
+  border-radius: 100%;
+  width: 50px;
+  margin-left:auto;margin-right:auto;
+}
+
+.PlusLetter {
+  text-align: center;
+  line-height: 50px;
+  font-size: 30px;
 }

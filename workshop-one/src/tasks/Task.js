@@ -15,19 +15,20 @@ class Task extends Component {
         })
     }
 
-    setBackground(){
+    setButtonText(state){
+        return (state ? "Mark as Incomplete" : "Mark as Complete")
     }
 
     render(){
-        this.setBackground()
         return (
-        <div className="Task">
+        <div className={`Task__Completed__${this.state.completed}`}>
             <h2 className="Heading" >{this.props.title}</h2>
             <p className="Subheading">{this.props.description}</p>
             {this.state.completed && (
                 <p className="Subheading">This has been completed</p>
             )}
-            <button className="TaskButton" onClick={(event) => { this.handleCompletion(); this.setBackground(); this.render();}}> Complete </button>
+            <button className={`TaskButton__Completed__${this.state.completed}`} onClick={(event) => { this.handleCompletion(); this.render();}}> 
+            {this.setButtonText(this.state.completed)} </button>
         </div>
         )
     }

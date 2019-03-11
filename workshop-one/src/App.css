@@ -34,7 +34,7 @@
   }
 }
 
-.Task {
+.Task__Completed__false {
   display: center;
   width: fit-content;
   min-width:50vw;
@@ -48,14 +48,20 @@
   border-radius:20px;
 }
 
-.TaskUncompleted {
-  background-color: #282c34 !important;
+.Task__Completed__true {
+  display: center;
+  width: fit-content;
+  min-width:50vw;
+  background-color: #282c34;
+  opacity: 0.3;
+  align-content: center;
+  margin-top:5px;
+  margin-bottom:5px;
+  margin-left:auto;margin-right:auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius:20px;
 }
-
-.TaskCompleted {
-    background-color: white !important;
-}
-
 .Heading {
   color: white;
 }
@@ -76,7 +82,18 @@
   /* background-color: #21252e; */
 }
 
-.TaskButton {
+.TaskButton__Completed__false {
+  padding:5px;
+  border-radius:8px;
+
+  background-color: rgb(41, 183, 193);
+  border: none;
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.TaskButton__Completed__true {
   padding:5px;
   border-radius:8px;
 

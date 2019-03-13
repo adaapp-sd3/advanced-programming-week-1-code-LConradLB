@@ -2,13 +2,9 @@
 class Carrot extends Crop {
 
     constructor( x, y) {
-        // console.log("creating carrot")
         super("carrot", null, x, y, loadImage('./images/carrot.png'))
-        // this.type = "carrot"
-        // Get the image based on the name of the field
-        this.image = loadImage('./images/carrot.png') // ./carrot.png
+        this.image = loadImage('./images/carrot.png')
         this.health = 0
-        // this.field = field
         this.x = x
         this.y = y
         this.birthstamp = millis() / 1000

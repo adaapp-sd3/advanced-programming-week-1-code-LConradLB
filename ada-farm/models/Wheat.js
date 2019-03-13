@@ -1,12 +1,9 @@
 
 class Wheat extends Crop {
-    
+
     constructor( x, y) {
-        // console.log("creating carrot")
         super("wheat", null, x, y, loadImage('./images/wheat.png'))
-        // this.type = "carrot"
-        // Get the image based on the name of the field
-        this.image = loadImage('./images/wheat.png') // ./carrot.png
+        this.image = loadImage('./images/wheat.png') 
         this.health = 0
         // this.field = field
         this.x = x

@@ -20,21 +20,10 @@ class Field {
     }
 
     plant(x, y) {
-        // console.log('new plant')
         // Get the crop name from the field name
         var cropName = this.name.split(' ') // => e.g. "Wheat"
         // Add a new crop to the field's list of crops
-        // console.log(cropName, this.crops)
-
         this.crops.push(Crop.plant(cropName[0], x, y))
-        // switch(cropName[0]){
-        //     case "Carrot": this.crops.push(new Carrot(x,y)); break;
-        //     case "Wheat" : this.crops.push(new Wheat(x,y)); break;
-        //     case "Pumpkin" : this.crops.push(new Pumpkin(x,y)); break;
-        //     default: return;
-        // }
-        
-        // this.crops.push(new Crop(cropName[0], this, x, y))
     }
 
     containsPoint(x, y) {

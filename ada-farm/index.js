@@ -5,7 +5,7 @@ var activeField = null
 // This setup function is called once
 // when P5 is ready to go
 function setup() {
-    // console.log("setup")
+
     createCanvas(window.innerWidth, window.innerHeight)
     background('#78d361')
     // alert('Welcome to the farm')
@@ -38,7 +38,6 @@ function keyPressed() {
 // P5 and is where we can do most of our work
 function draw() {
     
-    // console.log("drawing")
     background('#78d361')
 
     for (var field of fields) {
@@ -63,9 +62,7 @@ function setActiveFieldFromFarmerPosition() {
     activeField = null
     farmer.setActiveField(null)
     for (var field of fields) {
-        // console.log(field.containsPoint(farmer.x, farmer.y))
         if (field.containsPoint(farmer.x, farmer.y)) {
-            // console.log("setting active", field)
             activeField = field
             farmer.setActiveField(field)
         }

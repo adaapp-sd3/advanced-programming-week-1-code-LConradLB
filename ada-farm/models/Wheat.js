@@ -5,7 +5,6 @@ class Wheat extends Crop {
         super("wheat", null, x, y, loadImage('./images/wheat.png'))
         this.image = loadImage('./images/wheat.png') 
         this.health = 0
-        // this.field = field
         this.x = x
         this.y = y
         this.birthstamp = millis() / 1000

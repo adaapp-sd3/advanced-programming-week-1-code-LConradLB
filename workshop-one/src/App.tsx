@@ -20,29 +20,35 @@ class App extends Component {
     this.setState({ show: false });
   };
 
-  addStubData(obj) {
+  addStubData(obj: any) {
     stubTaskData.push(obj)
   }
 
-  handleAddTask(event) {
-    const formData = new FormData(event.target)
-    const user = {}
+  handleAddTask(event: any) {
+    const formData: FormData = new FormData(event.target)
+    const newTaskObject: TaskData = {title: "", description: ""}
  
     event.preventDefault()
  
     for (let entry of formData.entries()) {
-        user[entry[0]] = entry[1]
+      newTaskObject[entry[0]] = (entry[1] as string)
     }
-    console.log(user)
-    stubTaskData.push(user)
+    console.log(newTaskObject)
+    stubTaskData.push(newTaskObject)
     this.hideModal()
 
  }
 
-  removeElementWithKey(key){
+  removeElementWithKey(key: number){
+    console.log("key", key)
+    console.log("taskData", stubTaskData)
+    console.log("newTask", stubTaskData.filter(function(ele, index){
+      return index != key;
+    }))
     stubTaskData = stubTaskData.filter(function(ele, index){
       return index != key;
     });
+    console.log(stubTaskData)
     this.forceUpdate()
   }
 
@@ -71,5 +77,14 @@ class App extends Component {
     );
   }
 }
+
+interface TaskData {
+  [key:string]: string
+  title: string;
+  description: string;
+}
+// type TaskDataNew= { title: string, description:string };
+// type Dict = { [key: string]: string };
+
 
 export default App;
